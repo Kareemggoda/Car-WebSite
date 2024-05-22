@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>وكالة السيارات</title>
+<link href="style.css" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+
+<style>
+    body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+    .video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    background-color: black; /* Set background color to black */
+}
+
+    video {
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    header {
+        background-image: url('images/car\ photo\ Lamp.png');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        position: relative;
+        z-index: 1;
+    }
+    nav {
+        background-color: #444;
+        text-align: center;
+        padding: 10px 0;
+        position: relative;
+        z-index: 1;
+    }
+    a{
+        text-decoration: none;
+        color: black;
+        }
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+    }
+    .btn {
+    float: right;
+    margin-right: 15px; /* Adjust the margin as needed */
+    background-color: #333; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove button border */
+    padding: 5px 15px; /* Adjust the padding as needed */
+    font-size: 14px; /* Add padding inside the button */
+    border-radius: 5px; /* Add some border radius for rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s; /* Add a smooth transition for background color change */
+}
+
+.btn:hover {
+    background-color: wheat; /* Change background color on hover */
+}
+.btn a{
+    text-decoration: none;
+    color: black;
+}
+    .content {
+        position: relative;
+        z-index: 1;
+        padding-top: 20px; /* Adjust spacing below header and navigation */
+    }
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+        padding-top: 10px;
+    }
+    .card-body {
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <div class="video-container">
+        <!-- <video autoplay loop muted>
+            <source src="images/car_video.mp4" type="video/mp4">            
+        </video> -->
+        <img src="images/Black_colour.jpg"  alt="">
+    </div> 
+    
+    <header>
+        <h1>وكالة السيارات</h1>
+    </header>
+    <nav>
+        <a href="index.html">الرئيسية</a>
+        <a href="about.html">حول</a>
+        <a href="contact.html">اتصل</a>
+        <button class="btn"><a href="About.html"><a href="About.html"><img src="images/Amrica_logo.png" alt="" width="25">  English</a></button>
+
+    </nav>
+    <div class="content">
+        <div class="row row-cols-1 row-cols-md-3 g-3">
+            <div class="col">
+                <div class="card">
+                    <img src="images/BMW.png" class="card-img-top" alt="BMW">
+                    <div class="card-body">
+                        <h2 class="card-title"><a href="BMW.html">بي ام دبليو</a></h2>
+                        <p class="card-text">مركباتنا ومنتجاتنا مصممة لتلبية احتياجات عملائنا</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="images/Hyundai.png" class="card-img-top" alt="Hyundai">
+                    <div class="card-body">
+                        <h2 class="card-title">
+                            <a href="hyundai.html">هيونداي</a>
+                        </h2>
+                        <p class="card-text">مركباتنا ومنتجاتنا مصممة لتلبية احتياجات عملائنا</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="images/Toyota.png" class="card-img-top" alt="Toyota">
+                    <div class="card-body">
+                        <h2 class="card-title">تويوتا</h2>
+                        <p class="card-text">مركباتنا ومنتجاتنا مصممة لتلبية احتياجات عملائنا</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="images/ford.jpg" class="card-img-top" alt="Ford">
+                    <div class="card-body">
+                        <h2 class="card-title">فورد</h2>
+                        <p class="card-text">مركباتنا ومنتجاتنا مصممة لتلبية احتياجات عملائنا</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="images/chevrlet.png" class="card-img-top" alt="Chevrolet">
+                    <div class="card-body">
+                        <h2 class="card-title">شيفروليه</h2>
+                        <p class="card-text">مركباتنا ومنتجاتنا مصممة لتلبية احتياجات عملائنا</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="images/mercedes.png" class="card-img-top" alt="Mercedes">
+                    <div class="card-body">
+                        <h2 class="card-title">مرسيدس</h2>
+                        <p class="card-text">مركباتنا ومنتجاتنا مصممة لتلبية احتياجات عملائنا</p>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col">
+                <div class="card">
+                    <img src="images/Honda.png" class="card-img-top" alt="Honda">
+                    <div class="card-body">
+                        <h2 class="card-title">هوندا</h2>
+                        <p class="card-text">مركباتنا ومنتجاتنا مصممة لتلبية احتياجات عملائنا</p>
+                    </div>
+                </div>
+            </div> -->
+            <div class="col">
+                <div class="card">
+                    <img src="images/Nissan.jpg" class="card-img-top" alt="Nissan">
+                    <div class="card-body">
+                        <h2 class="card-title">
+                            <a href="nissan.html">نيسان</a></h2>
+                        <p class="card-text">مركباتنا ومنتجاتنا مصممة لتلبية احتياجات عملائنا</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="images/fiat tipo.jpg" class="card-img-top" alt="Fiat Tipo">
+                    <div class="card-body">
+                        <h2 class="card-title">
+                            <a href="fiat tipo/fiat tipo.html">فيات تيبو</a>
+                        </h2>
+                        <p class="card-text">مركباتنا ومنتجاتنا مصممة لتلبية احتياجات عملائنا</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="images/chevrlet.png" class="card-img-top" alt="Chevrolet">
+                    <div class="card-body">
+                        <h2 class="card-title">
+                            <a href="Chevrolet/Chevrolet.html">شيفروليه</a>
+                        </h2>
+                        <p class="card-text">مركباتنا ومنتجاتنا مصممة لتلبية احتياجات عملائنا</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="images/mercedes.png" class="card-img-top" alt="Mercedes">
+                    <div class="card-body">
+                        <h2 class="card-title">
+                            <a href="mersedes/mersedes.html">مرسيدس</a>
+                        </h2>
+                        <p class="card-text">مركباتنا ومنتجاتنا مصممة لتلبية احتياجات عملائنا</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="images/Mazda CX-5.jpg" class="card-img-top" alt="Mazda">
+                    <div class="card-body">
+                        <h2 class="card-title">
+                            <a href="Mazda CX-5/Mazda-CX-5.html">مازدا</a>
+                        </h2>
+                        <p class="card-text">مركباتنا ومنتجاتنا مصممة لتلبية احتياجات عملائنا</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="images/lamborghini revuelto.jpg" class="card-img-top" alt="Lamborghini">
+                    <div class="card-body">
+                        <h2 class="card-title">
+                            <a href="lamborghini aventador/lamborghini aventador.html">لامبورغيني</a>
+                        </h2>
+                        <p class="card-text">مركباتنا ومنتجاتنا مصممة لتلبية احتياجات عملائنا</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="images/Nissan Qashqai.jpg" class="card-img-top" alt="Nissan Qashqai">
+                    <div class="card-body">
+                        <h2 class="card-title">
+                            <a href="Nissan Qashqai/NissanQashqai.html">نيسان قشقاي</a>
+                        </h2>
+                        <p class="card-text">مركباتنا ومنتجاتنا مصممة لتلبية احتياجات عملائنا</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="images/2024 Kia Sportage 30th Edition.jpg" class="card-img-top" alt="KIA">
+                    <div class="card-body">
+                        <h2 class="card-title">
+                            <a href="Kia Sportage 30th Edition/Kia.html">كيا</a>
+                        </h2>
+                        <p class="card-text">مركباتنا ومنتجاتنا مصممة لتلبية احتياجات عملائنا</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="images/porsche 911 gt3.jpg" class="card-img-top" alt="Porsche">
+                    <div class="card-body">
+                        <h2 class="card-title">
+                            <a href="porsche 911 gt3/porsche911gt3.html">بورش</a>
+                        </h2>
+                        <p class="card-text">مركباتنا ومنتجاتنا مصممة لتلبية احتياجات عملائنا</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="images/MINI COOPER 5-Door Hatch.jpg" class="card-img-top" alt="Mini Cooper">
+                    <div class="card-body">
+                        <h2 class="card-title">
+                            <a href="MINI COOPER/MINICOOPER.html">ميني كوبر</a>
+                        </h2>
+                        <p class="card-text">مركباتنا ومنتجاتنا مصممة لتلبية احتياجات عملائنا</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="images/mitsubishi eclipse.jpg" class="card-img-top" alt="Mitsubishi">
+                    <div class="card-body">
+                        <h2 class="card-title">
+                            <a href="mitsubishi eclipse/mitsubishieclipse.html">ميتسوبيشي</a>
+                        </h2>
+                        <p class="card-text">مركباتنا ومنتجاتنا مصممة لتلبية احتياجات عملائنا</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="images/Jaguar XF inside.jpg" class="card-img-top" alt="Jaguar">
+                    <div class="card-body">
+                        <h2 class="card-title">
+                            <a href="Jaguar XF inside/Jaguar XF inside.html">جاجوار</a>
+                        </h2>
+                        <p class="card-text">مركباتنا ومنتجاتنا مصممة لتلبية احتياجات عملائنا</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="images/dodge charger 2021.jpg" class="card-img-top" alt="Dodge">
+                    <div class="card-body">
+                        <h2 class="card-title">
+                            <a href="dodge charger/dodge charger.html">دودج</a>
+                        </h2>
+                        <p class="card-text">مركباتنا ومنتجاتنا مصممة لتلبية احتياجات عملائنا</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="images/Bentley Continental GT.jpg" class="card-img-top" alt="Bentley">
+                    <div class="card-body">
+                        <h2 class="card-title">
+                            <a href="Bentley ContinentalGT/bentely.html">بنتلي</a>
+                        </h2>
+                        <p class="card-text">مركباتنا ومنتجاتنا مصممة لتلبية احتياجات عملائنا</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card">
+                    <img src="images/Audi.png" class="card-img-top" alt="Audi">
+                    <div class="card-body">
+                        <h2 class="card-title">أودي</h2>
+                        <p class="card-text">مركباتنا ومنتجاتنا مصممة لتلبية احتياجات عملائنا</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

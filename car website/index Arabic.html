@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>شريط الصور</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow: auto;
+    }
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 10px 20px;
+        z-index: 1;
+    }
+    .prev {
+        left: 0;
+    }
+    .next {
+        right: 0;
+    }
+    header {
+        background-image: url('images/car\ photo\ Lamp.png');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        position: relative;
+        z-index: 1;
+    }
+    nav {
+        background-color: #444;
+        text-align: center;
+        padding: 10px 0;
+        position: relative;
+        z-index: 1;
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+    }
+    .btn {
+        float: right;
+        margin-right: 15px;
+        background-color: #333;
+        color: white;
+        border: none;
+        padding: 5px 15px;
+        font-size: 14px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .btn:hover {
+        background-color: wheat;
+    }
+    .btn a {
+        text-decoration: none;
+        color: black;
+    }
+    .content {
+        position: relative;
+        z-index: 1;
+        padding-top: 20px;
+    }
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+        padding-top: 10px;
+        border-radius: 90%;
+    }
+    .card-body {
+        text-align: center;
+    }
+    .card {
+        margin: 10px;
+    }
+    .card-img-top_1 {
+        height: 350px;
+        object-fit: cover;
+        border-radius: 15px;
+    }
+    .card-body {
+        text-align: center;
+    }
+    h1 {
+        text-align: center;
+        font-size: 3rem;
+        margin-top: 50px;
+    }
+    .card {
+        margin-bottom: 20px;
+    }
+    .foot {
+        margin-top: 20px;
+        background-color: black;
+        color: white;
+        padding: 20px 0;
+    }
+    .footer-action {
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+    .social-buttons {
+        padding-left: 0;
+        list-style-type: none;
+    }
+    .social-buttons li {
+        display: inline-block;
+        margin-right: 10px;
+    }
+    .social-buttons a {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: white;
+        color: #333;
+        font-size: 24px;
+        transition: background-color 0.3s, color 0.3s;
+        border-radius: 5px;
+    }
+    .social-buttons a:hover {
+        background-color: #024dbc;
+        color: white;
+    }
+    .services {
+        background-color: white;
+        padding: 20px;
+    }
+    .services h5 {
+        color: black;
+    }
+    .services ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    .services li {
+        margin-bottom: 10px;
+    }
+    .services a.service-button {
+        display: block;
+        padding: 10px;
+        background-color: white;
+        color: black;
+        text-decoration: none;
+        border: 1px solid black;
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .services a.service-button:hover {
+        background-color: black;
+        color: white;
+    }
+    .service-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    .service-button:hover {
+        background-color: #0056b3;
+    }
+    .rental-car {
+        position: relative;
+        text-align: left;
+        color: white;
+        overflow: hidden;
+        height: 100vh;
+    }
+    .car-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        border: none;
+        filter: brightness(50%);
+        margin: 0;
+        padding: 0;
+    }
+    .car-info {
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        transform: translateY(-50%);
+        max-width: 400px;
+    }
+    .premium {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .title {
+        font-size: 3em;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .model {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+    .price {
+        font-size: 1.5em;
+        color: #FFA500;
+        margin-bottom: 20px;
+    }
+    .buttons a {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-right: 10px;
+        border-radius: 25px;
+        text-decoration: none;
+        color: white;
+        background-color: #FFA500;
+        font-weight: bold;
+        transition: background-color 0.3s;
+    }
+    .buttons a:hover {
+        background-color: #FF8C00;
+    }
+    .rent-now {
+        background-color: transparent;
+        border: 2px solid #FFA500;
+        padding: 8px 18px;
+    }
+    .rent-now:hover {
+        background-color: #FFA500;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>وكالة السيارات</h1>
+    </header>
+    <nav>
+        <a href="index.html">المنزل</a>
+        <a href="about.html">حول</a>
+        <a href="contact.html">اتصل</a>
+        <button class="btn"><a href="index.html"><a href="index.html"><img src="images/Amrica_logo.png" alt="" width="25">English</a></button>
+
+    </nav>
+    <div class="rental-car">
+        <img src="images/car_3.png" alt="أودي RS7 Sportback" class="car-image">
+        <div class="car-info">
+            <div class="premium">مرحبًا بك في وكالتنا</div>
+            <div class="title">سيارة أوتو</div>
+            <div class="model"></div>
+            <div class="buttons">
+                <a href="About.html" class="view-details">عرض التفاصيل</a>
+                <a href="car_rent.html" class="rent-now">استئجار الآن</a>
+            </div>
+        </div>
+    </div>  
+    <h1>فريقنا</h1>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+        <div class="col">
+          <div class="card h-100">
+            <img src="images/karim.jpeg" class="card-img-top_1" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">عنوان البطاقة</h5>
+              <p class="card-text">هذا نص توضيحي للبطاقة.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="images/Abdelrahman.jpeg" class="card-img-top_1" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">عنوان البطاقة</h5>
+              <p class="card-text">هذه البطاقة تحتوي على نص توضيحي.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="images/Elon_Musk.jpg" class="card-img-top_1" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">عنوان البطاقة</h5>
+              <p class="card-text">هذا نص توضيحي للبطاقة.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="images/jeff Bezos.jpg" class="card-img-top_1" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">عنوان البطاقة</h5>
+              <p class="card-text">هذا نص توضيحي للبطاقة.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+  <h1 class="mt-5 mb-4">الأكثر مبيعًا <img src="images/Best_seller2.png" alt="شعار هيونداي" width="80"></h1>
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+      <div class="col">
+          <div class="card h-100">
+              <img src="images/BMW.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h2 class="card-title"><a href="BMW.html">بي إم دبليو</a></h2>
+                  <p class="card-text">منتجاتنا مصممة وفقًا لاحتياجات عملائنا</p>
+              </div>
+          </div>
+      </div>
+      <div class="col">
+        <div class="card">
+            <img src="images/Nissan.jpg" class="card-img-top" alt="نيسان">
+            <div class="card-body">
+                <h2 class="card-title">
+                    <a href="nissan.html">نيسان</a></h2>
+                <p class="card-text">منتجاتنا مصممة وفقًا لاحتياجات عملائنا</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="images/Hyundai.png" class="card-img-top" alt="هيونداي">
+            <div class="card-body">
+                <h2 class="card-title">
+                    <a href="hyundai.html">هيونداي</a>
+                </h2>
+            </h2>
+            <p class="card-text">منتجاتنا مصممة وفقًا لاحتياجات عملائنا</p>
+        </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="images/fiat tipo.jpg" class="card-img-top" alt="فورد">
+            <div class="card-body">
+                <h2 class="card-title">
+                    <a href="fiat tipo/fiat tipo.html">فيات تيبو</a>
+                    </h2>
+                <p class="card-text">منتجاتنا مصممة وفقًا لاحتياجات عملائنا</p>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+        if (index < 0) {
+            slideIndex = totalSlides - 1;
+        } else if (index >= totalSlides) {
+            slideIndex = 0;
+        } else {
+            slideIndex = index;
+        }
+
+        slides.forEach((slide, i) => {
+            if (i === slideIndex) {
+                slide.style.display = 'block';
+            } else {
+                slide.style.display = 'none';
+            }
+        });
+    }
+
+    showSlide(slideIndex);
+
+    document.querySelector('.prev').addEventListener('click', () => {
+        showSlide(slideIndex - 1);
+    });
+
+    document.querySelector('.next').addEventListener('click', () => {
+        showSlide(slideIndex + 1);
+    });
+</script>
+
+<footer class="foot">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="services">
+                    <h5>الخدمات</h5>
+                    <ul>
+                        <li>
+                            <a href="car_rent.html" class="service-button">تأجير السيارات</a>
+                        </li>
+                        <li></li>
+                        <!-- <li><a href="#" class="service-button">Car Sales</a></li> -->
+                        <li>
+                            <a href="repair.html" class="service-button">إصلاح السيارات</a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+            <div class="col-md-4">
+                <h5>تواصل معنا</h5>
+                <p>البريد الإلكتروني: info@caragency.com</p>
+                <p>الهاتف: 123-456-7890</p>
+                <p>العنوان: 123 شارع رئيسي، المدينة</p>
+            </div>
+            <div class="col-md-4">
+                <h5>تابعنا</h5>
+                <ul class="list-inline social-buttons">
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
+

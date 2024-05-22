@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* Slider styles */
+        .slider {
+            width: 100%;
+            height: 500px; /* Set to your desired height */
+            overflow: hidden;
+            margin-bottom: 20px; /* Add space between slider and cards */
+            position: relative;
+        }
+
+        .slides {
+            display: flex;
+            transition: 0.5s;
+            height: 100%; /* Set the height of the slides to 100% of the slider height */
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%; /* Set to 100% of the slide's container (slider) */
+            flex-shrink: 0;
+        }
+
+        .slide img {
+            width: 100%; /* Set image width to 100% */
+            height: 100%; /* Set the image to fill the entire slide */
+            object-fit: cover;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+            width: auto;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.3s;
+            user-select: none;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .container {
+    margin-top: 20px;
+}
+.container.text-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Set the height of the container to the full viewport height */
+}
+
+
+.card {
+    border: 1px solid #ccc;
+    /* border-radius: 8px; */
+    transition: box-shadow 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    border-top-left-radius: 8px;
+    /* border-top-right-radius: 8px; */
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Make the card body take up the full height of the card */
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    text-align: center; /* Center the text horizontally */
+}
+
+.card-text {
+    color: #555;
+}
+.btn:hover {
+    background-color: blanchedalmond;
+}
+
+
+@media (min-width: 768px) {
+    .card-img-top {
+        height: 300px;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+
+    }
+}
+
+    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Repair page</title>
+</head>
+<body>
+    <!-- <div class="container">
+        <div class="slider">
+            <div class="slides">
+                <div class="slide"><img src="repair_car/repair_slide.jpg" alt="Image 1"></div>
+                <div class="slide"><img src="repair_car/repair_slide2.jpg" alt="Image 2"></div>
+                <div class="slide"><img src="repair_car/repair_slide3.jpg" alt="Image 3"></div>
+            </div>
+            <div class="prev" onclick="plusSlide(-1)">&#10094;</div>
+            <div class="next" onclick="plusSlide(1)">&#10095;</div>
+        </div>
+    </div> -->
+    <div class="container text-center">
+        <h1 class="mt-5 mb-4">
+            <img src="repair_car/terios.jpg" alt="Hyundai Logo" width="40">
+            Our Service
+            <img src="repair_car/terios.jpg" alt="Hyundai Logo" width="40">
+        </h1>
+    </div>    
+            <div class="container text-center_1">
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="repair_car/repair_1.jpg" class="card-img-top" alt="..."  style="width: 100%; height: 500px;">
+                            <div class="card-body">
+                                <h5 class="card-title">Service 1</h5>
+                                <p class="card-text">2500 EGP</p>
+                                <a href="contact.html" class="btn btn-primary" style="margin-bottom: 8px; background-color: white; color: black; text-decoration: none; padding: 8px 16px; border-radius: 4px; border: 1px solid black;">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="repair_car/repair_2.jpg" class="card-img-top" alt="..."  style="width: 100%; height: 500px;">
+                            <div class="card-body">
+                                <h5 class="card-title">Service 2</h5>
+                                <p class="card-text">3000 EGP</p>
+                                <a href="contact.html" class="btn btn-primary" style="margin-bottom: 8px; background-color: white; color: black; text-decoration: none; padding: 8px 16px; border-radius: 4px; border: 1px solid black;">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="repair_car/repair_3.jpg" class="card-img-top" alt="..."  style="width: 100%; height: 500px;">
+                            <div class="card-body">
+                                <h5 class="card-title">Service 3</h5>
+                                <p class="card-text">3500 EGP</p>
+                                <a href="contact.html" class="btn btn-primary" style="margin-bottom: 8px; background-color: white; color: black; text-decoration: none; padding: 8px 16px; border-radius: 4px; border: 1px solid black;">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row row-cols-1 row-cols-md-4 g-4">
+                            <div class="col">
+                                <div class="card h-100">
+                                    <img src="repair_car/repair_4.jpg" class="card-img-top" alt="..." style="width: 100%; height: 500px;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Service 4</h5>
+                                        <p class="card-text">5000 EGP</p>
+                                        <a href="contact.html" class="btn btn-primary" style="margin-bottom: 8px; background-color: white; color: black; text-decoration: none; padding: 8px 16px; border-radius: 4px; border: 1px solid black;">Book Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+            
+ 
+</body>
+</html>
